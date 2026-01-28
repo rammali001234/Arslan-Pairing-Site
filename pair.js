@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
     async function Nobita_PAIR_CODE() {
         const { state, saveCreds } = await useMultiFileAuthState('./temp/' + id);
         try {
-            let Pair_Code_By_Nobita = Arslan_Tech({
+            let Pair_Code_By_Nobita = Nobita({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({ level: 'fatal' }).child({ level: 'fatal' })),
@@ -52,7 +52,7 @@ router.get('/', async (req, res) => {
                     let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                     await delay(800);
                     let b64data = Buffer.from(data).toString('base64');
-                    let session = await Pair_Code_By_Nobita.sendMessage(Pair_Code_By_Nobita.user.id, { text: 'ARSLAN-MD~' + b64data });
+                    let session = await Pair_Code_By_Nobita.sendMessage(Pair_Code_By_Nobita.user.id, { text: 'Nobita' + b64data });
 
                     let Nobita_TEXT = `
         
