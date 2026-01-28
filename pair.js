@@ -6,7 +6,7 @@ const fs = require('fs');
 let router = express.Router();
 const pino = require('pino');
 const {
-    default: Arslan_Tech,
+    default: Nobita,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
